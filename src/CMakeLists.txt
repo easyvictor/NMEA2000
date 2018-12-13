@@ -21,15 +21,14 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-
-add_library(nmea2000
-  N2kMsg.cpp
-  N2kStream.cpp
-  N2kMessages.cpp
-  Seasmart.cpp
+file(GLOB NMEA2000_SRC
+    "*.cpp"
 )
+
+add_library(nmea2000 ${NMEA2000_SRC})
 
 target_include_directories(nmea2000
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
+  "${CMAKE_CURRENT_SOURCE_DIR}/../../NMEA2000_socketCAN"
 )
