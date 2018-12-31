@@ -2080,9 +2080,8 @@ void tNMEA2000::ParseMessages() {
     uint8_t MsgIndex;
     static const int MaxReadFramesOnParse=20;
     int FramesRead=0;
-//    tN2kMsg N2kMsg;
 
-    if (!Open()) return;  // Can not do much
+    if (!DeviceReady) return; // Not much to do here
 
     if (dbMode != dm_None) return; // No much to do here, when in Debug mode
 

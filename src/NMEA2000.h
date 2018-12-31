@@ -628,7 +628,7 @@ public:
     // Set the stream, where messages will be forwarded in listen mode.
     void SetForwardStream(N2kStream* _stream) { ForwardStream=_stream; }
 
-    // You can call this. It will be called anyway automatically by ParseMessages();
+    // This must be called before parsing messages.
     bool Open();
 
     // Generate N2k message e.g. by using N2kMessages.h and simply send it to the bus.
